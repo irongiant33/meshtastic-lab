@@ -3,6 +3,7 @@
 Estimated Completion Time: 15 minutes
 
 In this lab you will:
+
 - Learn about the utility of Meshtastic
 - Learn about the hardware that is used to implement a Meshtastic Node
 - Get hands on experience with using Meshtastic for off-grid communications
@@ -13,7 +14,7 @@ In this lab you will:
 
 Meshtastic is an open source, off-grid, decentralized, mesh network built to run on affordable, low-power devices. As you can see in the diagram above, Meshtastic can work without relying on cellular or traditional internet service by using a radio frequency communication protocol known as long-range (LoRa) ([ref 1](#resources)). LoRa uses chirp spread spectrum (CSS) modulation to encode data, an advantage of CSS is that it reduces power consumption and increases the range at which data can be received, but the disadvantage is the data rates are not very high.
 
-<img src="images/lora_modulation.png" alt="lora_modulation" width="380"/> <img src="images/lorawan.png" alt="lorawan" width="300"/>
+<img src="images/lora_modulation.png" alt="lora_modulation" width="50%"/> <img src="images/lorawan.png" alt="lorawan" width="50%"/>
 
 On the left is a visualization of the LoRa modulation scheme as a function of time vs. frequency. On the right is a graphic from the LoRa alliance on the difference between LoRa and LoRa Wide Area Network (LoRaWAN). When we talk about LoRa in this lab, we are strictly referring to the physical layer protocol. Meshtastic does not comply with LoRaWAN because it uses the full spectyrum frequency range per region to enable several hundred possible frequency channels. For examples of LoRaWAN compliant services, see [ref 4](#references).
 
@@ -29,6 +30,15 @@ In front of you are two Meshtastic devices. On the left is the Rak WisBlock ([re
 
 Above you'll see the buttons on each of the devices. For the WisBlock and the T-Beam, the green arrow corresponds to the user button and the blue arrow corresponds to the reset button. On the WisBlock, the red arrow corresponds to "GPS Disable". For the T-Beam, the red arrow corresponds to the power button.
 
+### Total Materials Needed
+
+| Device | Cost | Notes |
+|--------|------|-------|
+| RAK Meshtastic Starter Kit | $25 | Case not needed |
+| LilyGo T-Beam v1.1 | $43 | Case not needed |
+| Phone or bluetooth compatible browser | varies | alternatively, you can purchase the LilyGo t-deck for $65 that comes with a keyboard |
+| **Total** | $68 | Assuming you have a phone and/or bluetooth compatible browser |
+
 ## Usage
 
 Optionally you can follow the instructions in [ref 5](#references) for installing Meshtastic on your device. Alternatively, Meshtastic is installed on the two phones that are in front of you today. Once you have the application installed, follow the procedure below:
@@ -36,18 +46,18 @@ Optionally you can follow the instructions in [ref 5](#references) for installin
 1. Launch the Meshtastic Application of your choice. Make sure that Bluetooth is enabled.
 2. You will need to pair with the Meshtastic device over Bluetooth before you can use it to communicate. In the settings section of your respective application, add a new connection and pair with either the WisBlock or the T-Beam.
 
-<img src="images/new_connection_phone.png" alt="phone" width="200"/> <img src="images/new_connection_web.png" alt="web" width="800"/>
+<img src="images/new_connection_phone.png" alt="phone" width="150"/> <img src="images/new_connection_web.png" alt="web" width="400"/>
 
 3. Once you've selected the device, you should see a 6 digit number appear on the device's screen. If you don't see the 6 digits, try pressing the user button.
 4. After entering the pairing code in the application, the application will begin to load configurations for the device. Once configurations are complete, select the "region" and choose the option for "US". This ensures that Meshtastic will use the 915MHz ISM band that is legal in the US.
 5. Repeat steps 1-4 for the other Meshtastic device using a different host device, such as one of the phones we have provided or a laptop with a web client. Once you have two devices configured, proceed on to step 6
 6. Navigate to the primary channel, which should be "Long/Fast" and send a message. You should see it appear on the other device. Experiment with getting some distance between devices (don't run away with our devices!)
 
-<img src="images/phone_channel.png" alt="phone" width="200"/> <img src="images/web_channel.png" alt="web" width="800"/>
+<img src="images/phone_channel.png" alt="phone" width="150"/> <img src="images/web_channel.png" alt="web" width="400"/>
 
 7. Experiment with some different pre-configured channel options. Meshtastic's default is the Long/Fast channel. All of Meshtastic channel names correspond to the link budget and data rate. With link budget, more is better. A good analogy for link budget is the size of a car's gas tank - more gas yields greater distance before refuel. With data rate, more is better as well. However, even with the fastest data rate notice we aren't really breaking any data transfer speed records. This barely beats some of the slower asynchronous serial communication protocols.
 
-<img src="images/phone_channel_config.png" alt="phone_config" width="200"/> <img src="images/meshtastic_channels.png" alt="web" width="800"/>
+<img src="images/phone_channel_config.png" alt="phone_config" width="150"/> <img src="images/meshtastic_channels.png" alt="web" width="500"/>
 
 Make sure that you configure both devices for the same channel. Repeat step 6 for the new channel that you configured the devices for.
 
